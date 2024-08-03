@@ -14,9 +14,11 @@ ajustaTamanhoPalcoJogo()
 var cronometro = setInterval(function() {
     tempo -= 1
 
+    // Vitória
     if(tempo < 0){
         clearInterval(cronometro)
         clearInterval(criaMosca)
+        window.location.href = 'vitoria.html'
     } else {
         document.getElementById('cronometro').innerHTML = tempo
         }
@@ -31,6 +33,7 @@ function posicaoRandomica (){
     if(verificaMosquito){
         verificaMosquito.remove()
 
+        // Fim de jogo
         if(vidas > 3){
 
             window.location.href = 'fim_de_jogo.html'
